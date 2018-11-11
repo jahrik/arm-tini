@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu
+FROM aarch64/ubuntu
 
 # Dependencies
 RUN apt-get update \
