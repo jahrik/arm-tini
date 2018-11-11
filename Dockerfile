@@ -9,7 +9,15 @@ RUN apt-get update \
 # Tini for signal processing and zombie killing
 # https://github.com/krallin/tini
 ENV TINI_VERSION v0.18.0
-ENV ARCH armhf
+ARG $TAG
+RUN if [ "x$TAG" = "x" ] ; \
+      then \
+        echo Argument not provided ; \
+        export ARCH=armhf ; \
+      else \
+        echo Argument is $TAG ; \
+        export ARCH=$TAG ; \
+      fi
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${ARCH} /usr/local/bin/tini
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-${ARCH}.asc /usr/local/bin/tini.asc
 RUN gpg --keyserver hkp://p80.pool.sks-keyservers.net:80 \
