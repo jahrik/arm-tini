@@ -1,5 +1,6 @@
 IMAGE = "jahrik/arm-tini"
-TAG = "arm32v7"
+ARCH := $(shell uname -m)
+TAG = ${ARCH}
 
 all: build
 
