@@ -1,12 +1,9 @@
 FROM arm32v7/ubuntu
 
 # Dependencies
-RUN apt-get update && apt-get install -y \
-  --no-install-recommends \
-  apt-transport-https \
-  ca-certificates \
-  build-essential \
-  vim \
+RUN apt-get update \
+  && apt-get install -y \
+  gpg \
   && rm -rf /var/lib/apt/lists/*
 
 # Tini
