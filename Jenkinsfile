@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
-// def labels = ['armv7l', 'aarch64'] // labels for Jenkins node types we will build on
-def labels = ['armv7l']
+def labels = ['armv7l', 'aarch64'] // labels for Jenkins node types we will build on
 def builders = [:]
 for (x in labels) {
   def label = x // Need to bind the label variable before the closure - can't do 'for (label in labels)'

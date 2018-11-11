@@ -1,4 +1,4 @@
-FROM aarch64/ubuntu
+FROM ubuntu
 
 # Dependencies
 RUN apt-get update \
