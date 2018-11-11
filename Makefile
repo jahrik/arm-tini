@@ -4,7 +4,7 @@ TAG := $(shell uname -m)
 all: build
 
 build:
-	@docker build -t ${IMAGE}:$(TAG) .
+	@docker build -t ${IMAGE}:$(TAG) -f Dockerfile_${TAG}
 	@docker tag ${IMAGE}:$(TAG) ${IMAGE}:latest
 
 push:
