@@ -1,5 +1,14 @@
 FROM arm32v7/ubuntu
 
+# Dependencies
+RUN apt-get update && apt-get install -y \
+  --no-install-recommends \
+  apt-transport-https \
+  ca-certificates \
+  build-essential \
+  vim \
+  && rm -rf /var/lib/apt/lists/*
+
 # Tini
 # For signal processing and zombie killing
 ENV TINI_VERSION v0.18.0
