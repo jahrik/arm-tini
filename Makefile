@@ -5,10 +5,8 @@ all: build
 
 build:
 	@docker build -t ${IMAGE}:$(TAG) -f Dockerfile_${TAG} .
-	@docker tag ${IMAGE}:$(TAG) ${IMAGE}:latest
 
 push:
 	@docker push ${IMAGE}:$(TAG)
-	@docker push ${IMAGE}:latest
 
 .PHONY: all build push
