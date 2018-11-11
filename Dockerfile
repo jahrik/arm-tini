@@ -20,6 +20,6 @@ RUN tini -h
 
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
+# ENTRYPOINT ["/docker-entrypoint.sh"]
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
-# CMD ["/etc/logstash/logstash.conf"]
+ENTRYPOINT ["tini", "--"]
