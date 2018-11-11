@@ -1,12 +1,12 @@
 IMAGE = "jahrik/arm-tini"
-ARCH := $(shell uname -m)
-TAG = ${ARCH}
+TAG := $(shell uname -m)
 
 all: build
 
 build:
-	@docker build -t ${IMAGE}:$(TAG) .
+	@docker build --build-arg tag=${TAG} -t ${IMAGE}:$(TAG) .
 	@docker tag ${IMAGE}:$(TAG) ${IMAGE}:latest
+	docker build -t my_docker .  
 
 push:
 	@docker push ${IMAGE}:$(TAG)
