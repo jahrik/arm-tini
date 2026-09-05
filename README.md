@@ -14,8 +14,8 @@ docker run --rm jahrik/arm-tini:latest ps -p 1 -o user=,comm=
 ## Build
 
 ```bash
-make build
-make push
+just build
+just push
 ```
 
 CI: PR builds + PID 1 check; merge to main pushes multi-arch (amd64/arm64/armv7) to Docker Hub.
