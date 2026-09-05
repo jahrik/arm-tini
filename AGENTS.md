@@ -5,7 +5,7 @@ Multi-arch base image: Ubuntu + [tini](https://github.com/krallin/tini) as entry
 ## Commands
 
 ```bash
-make build                                  # build jahrik/arm-tini:latest
+just build                                  # build jahrik/arm-tini:latest
 docker run --rm jahrik/arm-tini:latest ps -p 1 -o comm=   # tini
 ```
 

@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - uses: extractions/setup-just@v3
 
       - name: Test building image.
-        run: docker build -t test-image .
+        run: just build test-image
 
       - name: Verify tini runs as PID 1.
         run: docker run --rm test-image ps -p 1 -o comm= | grep -q tini
