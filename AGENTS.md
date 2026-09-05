@@ -11,7 +11,7 @@ docker run --rm jahrik/arm-tini:latest ps -p 1 -o comm=   # tini
 
 ## CI
 
-`build.yml`: Test (build + PID 1 = tini check) on PR; Release (buildx amd64/arm64/armv7 push to Docker Hub) on merge to main. Needs `DOCKERHUB_USERNAME`/`DOCKERHUB_TOKEN` secrets.
+`build.yml`: Test (build + PID 1 = tini check) on PR; Release (buildx amd64/arm64/armv7 push to Docker Hub) on merge to main. Needs `DOCKERHUB_USERNAME`/`DOCKERHUB_TOKEN` secrets. Both jobs install `just` and run the `justfile`'s recipes (`build`, `login`, `release`) instead of raw `docker`/`docker/*-action` steps.
 
 ## Quirks
 
